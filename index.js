@@ -26,8 +26,10 @@ Expected expense object layout:
 */
 function validateExpenseObject(expenseObject) {
   if (expenseObject === null) return false;
+  // income should only have a postive value
   if (expenseObject.type === "income" && expenseObject.amount <= 0)
     return false;
+  // expense should only have a negative value
   if (expenseObject.type === "expense" && expenseObject.amount >= 0)
     return false;
   if (expenseObject.recurring === true && expenseObject.recurringPeriod <= 0)
